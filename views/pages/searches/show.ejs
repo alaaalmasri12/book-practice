@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%books.forEach(value=>{%>
+<img src="<%=value.image%>" alt="<%=value.title%>">
+<h1><%=value.title%></h1>
+<h5><%=value.authors%></h5>
+<h5><%=value.isbn%></h5>
+<p><%=value.description%></p>
+<form action="/add" method="POST">
+    <input type="text" name="title" value="<%=value.title%>">
+    <input type="text" name="authors" value="<%=value.authors%>">
+    <input type="text" name="description" value="<%=value.description%>">
+    <input type="text" name="isbn" value="<%=value.isbn%>">
+    <input type="text" name="image" value="<%=value.image%>">
+    <input type="text" name="booksehlf">
+<button type="submit">add</button>
+    </form>
+    <%})%>
+    
+
+</body>
+</html>
